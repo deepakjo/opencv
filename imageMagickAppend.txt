@@ -1,0 +1,3 @@
+convert -append trial1.png trial2.png trial.png //Vertical
+convert +append trial1.png trial2.png trial.png //Horizontal
+

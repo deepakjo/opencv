@@ -1,0 +1,87 @@
+api_key = '2cd96195599b4a0f8e87a257ac539b13'
+
+connection = http.client.HTTPConnection('api.football-data.org')
+connection.request('GET', '/v2/competitions/', None, headers )
+response = json.loads(connection.getresponse().read().decode())
+
+resp=requests.get('http://api.football-data.org/v2/competitions/', headers=headers)
+connection.request('GET', '/v2/competitions/2018/teams', None, headers )
+
+Printing competition names and codes:
+>>> for comp in response['competitions']:
+...     print('competition', comp['name'])
+...     print('id', comp['id'])
+...     print('---------------')
+
+connection = http.client.HTTPConnection('api.football-data.org')
+connection.request('GET', '/v2/competitions/', None, headers )
+response = json.loads(connection.getresponse().read().decode())
+for comp in response['competitions']:
+    if comp['plan'] == 'TIER_ONE':
+        print('competition', comp['name'])
+        print('id', comp['id'])
+        print('plan', comp['plan'])
+        print('---------------')
+
+connection = http.client.HTTPConnection('api.football-data.org')
+connection.request('GET', '/v2/competitions/', None, headers )
+response = json.loads(connection.getresponse().read().decode())
+for comp in response['competitions']:
+    if comp['plan'] == 'TIER_ONE' and comp['id'] == 2014:
+        url='/v2/competitions/{:d}/teams'.format(comp['id'])
+        connection.request('GET', url, None, headers )
+        response = json.loads(connection.getresponse().read().decode())
+        print('competition', comp['name'])
+        print('id', comp['id'])
+        print('plan', comp['plan'])
+        print('response', response)
+        print('---------------')
+
+import http.client
+import json
+api_key = '2cd96195599b4a0f8e87a257ac539b13'
+headers = { 'X-Auth-Token': api_key }
+connection = http.client.HTTPConnection('api.football-data.org')
+connection.request('GET', '/v2/competitions/', None, headers )
+response = json.loads(connection.getresponse().read().decode())
+
+for comp in response['competitions']:
+    if comp['plan'] == 'TIER_ONE':
+        'competition:{:s} id:{:d}'.format(comp['name'], comp['id'])
+
+competitionId = int(input('Give competition id:'))
+
+for comp in response['competitions']:
+    if comp['plan'] == 'TIER_ONE' and comp['id'] == competitionId:
+        url='/v2/competitions/{:d}/teams'.format(comp['id'])
+        connection.request('GET', url, None, headers )
+        response = json.loads(connection.getresponse().read().decode())
+        print('competition', comp['name'])
+        print('id', comp['id'])
+        print('plan', comp['plan'])
+        print('---------------')
+        team1Id = int(input('Give team1 id:'))
+        team2Id = int(input('Give team2 id:'))
+        for team in response['teams']:
+            if team['id'] == team1Id or team['id'] == team2Id:
+                noPlayers=int(input('Give number of players in ' + team['id']))
+                playerList = list()
+                for i in range(noPlayers):
+                    playerList.append(int(input('player number' + i + ':')))
+                teamUrl='/v2/teams/{:d}'.format(team['id'])
+                connection.request('GET', teamUrl, None, headers )
+                teamData = json.loads(connection.getresponse().read().decode())
+                print(teamData)
+                for player in teamData['squad']:
+                     if player['shirtNumber'] != None:
+                         'player(name){:s} shirtNumber{:d}'.format(player['name'],player['shirtNumber'])
+                 
+
+(player for player in squad if player_no.count(player['shirtNumber']) != 0)
+[(name['name'], jersey) for name, jersey in zip(team, player_no)]
+
+
+{'filters': {}, 'competitions': [{'emblemUrl': None, 'code': None, 'currentSeason': {'endDate': '2017-11-14', 'id': 7, 'startDate': '2015-10-07', 'currentMatchday': 6, 'winner': None}, 'name': 'WC Qualification', 'id': 2006, 'numberOfAvailableSeasons': 1, 'plan': 'TIER_FOUR', 'area': {'id': 2001, 'name': 'Africa'}, 'lastUpdated': '2018-06-04T23:54:04Z'}, {'emblemUrl': None, 'code': None, 'currentSeason': {'endDate': '2019-04-20', 'id': 295, 'startDate': '2018-08-25', 'currentMatchday': 7, 'winner': None}, 'name': 'Primera B Nacional', 'id': 2023, 'numberOfAvailableSeasons': 2, 'plan': 'TIER_FOUR', 'area': {'id': 2011, 'name': 'Argentina'}, 'lastUpdated': '2018-10-14T00:40:03Z'}, {'emblemUrl': None, 'code': 'ASL', 'currentSeason': {'endDate': '2019-04-07', 'id': 282, 'startDate': '2018-08-11', 'currentMatchday': 9, 'winner': None}, 'name': 'Superliga Argentina', 'id': 2024, 'numberOfAvailableSeasons': 2, 'plan': 'TIER_TWO', 'area': {'id': 2011, 'name': 'Argentina'}, 'lastUpdated': '2018-10-10T05:35:01Z'}, {'emblemUrl': None, 'code': None, 'currentSeason': {'endDate': '2018-03-15', 'id': 27, 'startDate': '2018-03-15', 'currentMatchday': None, 'winner': {'tla': 'RIV', 'id': 2069, 'crestUrl': None, 'shortName': 'River Plate', 'name': 'CA River Plate'}}
+{'filters': {}, 'competitions': [{'emblemUrl': None, 'code': None, 'currentSeason': {'endDate': '2017-11-14', 'id': 7, 'startDate': '2015-10-07', 'currentMatchday': 6, 'winner': None}, 'name': 'WC Qualification', 'id': 2006, 'numberOfAvailableSeasons': 1, 'plan': 'TIER_FOUR', 'area': {'id': 2001, 'name': 'Africa'}, 'lastUpdated': '2018-06-04T23:54:04Z'}, {'emblemUrl': None, 'code': None, 'currentSeason': {'endDate': '2019-04-20', 'id': 295, 'startDate': '2018-08-25', 'currentMatchday': 7, 'winner': None}, 'name': 'Primera B Nacional', 'id': 2023, 'numberOfAvailableSeasons': 2, 'plan': 'TIER_FOUR', 'area': {'id': 2011, 'name': 'Argentina'}, 'lastUpdated': '2018-10-14T00:40:03Z'}, {'emblemUrl': None, 'code': 'ASL', 'currentSeason': {'endDate': '2019-04-07', 'id': 282, 'startDate': '2018-08-11', 'currentMatchday': 9, 'winner': None}, 'name': 'Superliga Argentina', 'id': 2024, 'numberOfAvailableSeasons': 2, 'plan': 'TIER_TWO', 'area': {'id': 2011, 'name': 'Argentina'}, 'lastUpdated': '2018-10-10T05:35:01Z'}, {'emblemUrl': None, 'code': None, 'currentSeason': {'endDate': '2018-03-15', 'id': 27, 'startDate': '2018-03-15', 'currentMatchday': None, 'winner': {'tla': 'RIV', 'id': 2069, 'crestUrl': None, 'shortName': 'River Plate', 'name': 'CA River Plate'}}
+
+[{'nationality': 'Spain', 'role': 'PLAYER', 'countryOfBirth': 'Spain', 'shirtNumber': 16, 'id': 54, 'position': 'Midfielder', 'name': 'Jesús Navas', 'dateOfBirth': '1985-11-21T00:00:00Z'}, {'nationality': 'Denmark', 'role': 'PLAYER', 'countryOfBirth': 'Denmark', 'shirtNumber': 4, 'id': 56, 'position': 'Defender', 'name': 'Simon Kjær', 'dateOfBirth': '1989-03-26T00:00:00Z'}, {'nationality': 'Colombia', 'role': 'PLAYER', 'countryOfBirth': 'Colombia', 'shirtNumber': 14, 'id': 57, 'position': 'Attacker', 'name': 'Luis Muriel', 'dateOfBirth': '1991-04-16T00:00:00Z'}, {'nationality': 'Argentina', 'role': 'PLAYER', 'countryOfBirth': 'Argentina', 'shirtNumber': 25, 'id': 58, 'position': 'Defender', 'name': 'Gabriel Mercado', 'dateOfBirth': '1987-03-18T00:00:00Z'}, {'nationality': 'Argentina', 'role': 'PLAYER', 'countryOfBirth': 'Argentina', 'shirtNumber': 10, 'id': 59, 'position': 'Midfielder', 'name': 'Éver Banega', 'dateOfBirth': '1988-06-29T00:00:00Z'}, {'nationality': 'Argentina', 'role': 'PLAYER', 'countryOfBirth': 'Argentina', 'shirtNumber': 22, 'id': 60, 'position': 'Midfielder', 'name': 'Franco Vázquez', 'dateOfBirth': '1989-02-22T00:00:00Z'}, {'nationality': 'Spain', 'role': 'PLAYER', 'countryOfBirth': 'Spain', 'shirtNumber': 8, 'id': 61, 'position': 'Midfielder', 'name': 'Nolito', 'dateOfBirth': '1986-10-15T00:00:00Z'}, {'nationality': 'France', 'role': 'PLAYER', 'countryOfBirth': 'France', 'shirtNumber': 9, 'id': 73, 'position': 'Attacker', 'name': 'Wissam Ben Yedder', 'dateOfBirth': '1990-08-12T00:00:00Z'}, {'nationality': 'Spain', 'role': 'PLAYER', 'countryOfBirth': 'Spain', 'shirtNumber': 17, 'id': 74, 'position': 'Midfielder', 'name': 'Pablo Sarabia', 'dateOfBirth': '1992-05-11T00:00:00Z'}, {'nationality': 'Spain', 'role': 'PLAYER', 'countryOfBirth': 'Spain', 'shirtNumber': 18, 'id': 85, 'position': 'Defender', 'name': 'Sergio Escudero', 'dateOfBirth': '1989-09-02T00:00:00Z'}, {'nationality': 'Spain', 'role': 'PLAYER', 'countryOfBirth': 'Spain', 'shirtNumber': 7, 'id': 129, 'position': 'Midfielder', 'name': 'Roque Mesa', 'dateOfBirth': '1989-06-07T00:00:00Z'}, {'nationality': 'Portugal', 'role': 'PLAYER', 'countryOfBirth': 'Portugal', 'shirtNumber': 6, 'id': 131, 'position': 'Defender', 'name': 'Daniel Carriço', 'dateOfBirth': '1988-08-04T00:00:00Z'}, {'nationality': 'Portugal', 'role': 'PLAYER', 'countryOfBirth': 'Portugal', 'shirtNumber': 12, 'id': 1760, 'position': 'Attacker', 'name': 'André Silva', 'dateOfBirth': '1995-11-06T00:00:00Z'}, {'nationality': 'France', 'role': 'PLAYER', 'countryOfBirth': 'France', 'shirtNumber': 15, 'id': 1816, 'position': 'Midfielder', 'name': 'Maxime Gonalons', 'dateOfBirth': '1989-03-10T00:00:00Z'}, {'nationality': 'France', 'role': 'PLAYER', 'countryOfBirth': 'Cameroon', 'shirtNumber': 5, 'id': 8394, 'position': 'Defender', 'name': 'Ibrahim Amadou', 'dateOfBirth': '1993-04-06T00:00:00Z'}, {'nationality': 'Côte d’Ivoire', 'role': 'PLAYER', 'countryOfBirth': 'France', 'shirtNumber': 24, 'id': 8804, 'position': 'Defender', 'name': 'Joris Gnagnon', 'dateOfBirth': '1997-01-13T00:00:00Z'}, {'nationality': 'Spain', 'role': 'PLAYER', 'countryOfBirth': 'Spain', 'shirtNumber': 11, 'id': 15866, 'position': 'Midfielder', 'name': 'Aleix Vidal', 'dateOfBirth': '1989-08-21T00:00:00Z'}, {'nationality': 'Spain', 'role': 'PLAYER', 'countryOfBirth': 'Spain', 'shirtNumber': 13, 'id': 15926, 'position': 'Goalkeeper', 'name': 'Juan Soriano', 'dateOfBirth': '1997-08-23T00:00:00Z'}, {'nationality': 'Brazil', 'role': 'PLAYER', 'countryOfBirth': 'Brazil', 'shirtNumber': 23, 'id': 15929, 'position': 'Midfielder', 'name': 'Guilherme Arana', 'dateOfBirth': '1997-04-14T00:00:00Z'}, {'nationality': 'Czech Republic', 'role': 'PLAYER', 'countryOfBirth': 'Czech Republic', 'shirtNumber': 1, 'id': 16037, 'position': 'Goalkeeper', 'name': 'Tomáš Vaclík', 'dateOfBirth': '1989-03-29T00:00:00Z'}, {'nationality': 'Netherlands', 'role': 'PLAYER', 'countryOfBirth': 'Netherlands', 'shirtNumber': 21, 'id': 16148, 'position': 'Attacker', 'name': 'Quincy Promes', 'dateOfBirth': '1992-01-04T00:00:00Z'}, {'nationality': 'Spain', 'role': 'PLAYER', 'countryOfBirth': 'Spain', 'shirtNumber': 20, 'id': 32003, 'position': 'Midfielder', 'name': 'Borja Lasso', 'dateOfBirth': '1994-01-01T00:00:00Z'}, {'nationality': 'Spain', 'role': 'PLAYER', 'countryOfBirth': 'Spain', 'shirtNumber': 37, 'id': 33073, 'position': 'Defender', 'name': 'Juan Berrocal', 'dateOfBirth': '1999-02-05T00:00:00Z'}, {'nationality': 'Spain', 'role': 'PLAYER', 'countryOfBirth': 'Spain', 'shirtNumber': None, 'id': 33080, 'position': 'Midfielder', 'name': 'Pejiño', 'dateOfBirth': '1996-07-29T00:00:00Z'}, {'nationality': 'Spain', 'role': 'COACH', 'countryOfBirth': 'Spain', 'shirtNumber': None, 'id': 33530, 'position': None, 'name': 'Pablo Machín', 'dateOfBirth': '1975-04-07T00:00:00Z'}, {'nationality': 'Spain', 'role': 'PLAYER', 'countryOfBirth': 'Spain', 'shirtNumber': 3, 'id': 33620, 'position': 'Defender', 'name': 'Sergi Gómez', 'dateOfBirth': '1992-03-28T00:00:00Z'}]

@@ -1,0 +1,86 @@
+pygame 1.9.4
+Hello from the pygame community. https://www.pygame.org/contribute.html
+../football_matches/2018-19_R._Madrid_-_Ajax-2018-19_R._Madrid_-_Ajax.mp4
+4534.05
+1
+start: 4534.05
+end: 4534.25
+None
+type and time: <type 'unicode'> 01:44:33.60
+finds: (u'01', u'44', u'33', u'60')
+nums: [1.0, 44.0, 33.0, 60.0]
+6273.6
+None
+type and time: <type 'unicode'> 01:44:33.60
+finds: (u'01', u'44', u'33', u'60')
+nums: [1.0, 44.0, 33.0, 60.0]
+6273.6
+None
+type and time: <type 'int'> 0
+Enter get_frame
+time for make_frame 0
+None
+type and time: <type 'int'> 0
+Enter get_frame
+time for make_frame 0
+None
+type and time: <type 'float'> 4534.05
+None
+type and time: <type 'float'> 4534.05
+Enter get_frame
+time for make_frame 4534.05
+None
+type and time: <type 'float'> 4534.05
+Enter get_frame
+time for make_frame 4534.05
+__dict__ {'videoName': '../football_matches/2018-19_R._Madrid_-_Ajax-2018-19_R._Madrid_-_Ajax.mp4', 'imgpaths': ['/home/deepak/tactification_gif/4534.05.png'], 'clip': <moviepy.video.io.VideoFileClip.VideoFileClip instance at 0xa715dbac>, 'numFrames': 1, 'timeslots': [4534.05], 'imgDir': '/home/deepak/tactification_gif', 't_start': '4534.05', 'time': '4534.05', 't_end': 4534.25}
+num of frames and entries in json are not same 3 1
+../football_matches/2018-19_R._Madrid_-_Ajax-2018-19_R._Madrid_-_Ajax.mp4 4534.05 1 1
+type: <type 'float'>
+None
+type and time: <type 'unicode'> 01:44:33.60
+finds: (u'01', u'44', u'33', u'60')
+nums: [1.0, 44.0, 33.0, 60.0]
+6273.6
+None
+type and time: <type 'unicode'> 01:44:33.60
+finds: (u'01', u'44', u'33', u'60')
+nums: [1.0, 44.0, 33.0, 60.0]
+6273.6
+None
+type and time: <type 'float'> 4534.05
+None
+type and time: <type 'float'> 4534.05
+None
+type and time: <type 'int'> 0
+Enter get_frame
+time for make_frame 0
+None
+type and time: <type 'float'> 4534.05
+Enter get_frame
+time for make_frame 4534.05
+None
+type and time: <type 'int'> 0
+Enter get_frame
+time for make_frame 0
+None
+type and time: <type 'int'> 0
+Enter get_frame
+time for make_frame 0
+None
+type and time: <type 'float'> 4534.05
+Enter get_frame
+time for make_frame 4534.05
+manual_click: 4534.05 4534.06
+None
+type and time: <type 'float'> 4534.05
+Enter get_frame
+time for make_frame 4534.05
+None
+type and time: <type 'float'> 4534.05
+Enter get_frame
+time for make_frame 4534.05
+None
+type and time: <type 'float'> 9068.1
+Enter get_frame
+time for make_frame 9068.1

@@ -1,0 +1,11 @@
+#To add post
+http --auth eyJhbGciOiJIUzI1NiIsImV4cCI6MTUxODc1NjM3NywiaWF0IjoxNTE4NzUyNzc3fQ.eyJpZCI6ImRlZXBha3Bqb3NlQGdtYWlsLmNvbSJ9.cZT2Bdwe0Q7X5p1BCSLjL_aqn_kGS1HnwsopteioUVA: --form POST http://www.tactification.com/api_rt/v1.0/new_post  body='<p style="color:Black;">Anticipate the move in this situation?</p><br><br><br><p><h5><i>*ing alexis, xavi, iniesta, messi, busquets, alves, mikel, ramires, mata, meireles, lampard, cole, bosingwa, ivanovic</i></h5></p>' header="Ft: FC Barcelona Against Chelsea" twTag="futbol, football, UCL, soccer, FCBarcelona, CFC, CHEFCB" tactical_gif@home_img.jpg tactical_pic_1750@with_help_msg.jpg tactical_pic_1575@with_help_msg_75.jpg tactical_pic_875@with_help_msg_50.jpg
+
+To get token:
+http --json --auth deepakpjose@gmail.com:HcJuCi051013 GET http://www.tactification.com/api_rt/v1.0/token
+
+To upload video:
+http --auth eyJhbGciOiJIUzI1NiIsImV4cCI6MTUxMzM0NjgzNSwiaWF0IjoxNTEzMzQzMjM1fQ.eyJpZCI6ImRlZXBha3Bqb3NlQGdtYWlsLmNvbSJ9.3yW363CfnvdmIKj99CkOyfoQdhO13jsU8UVIhS4Rtu8: --form POST http://www.tactification.com/api_rt/v1.0/add_video/2 videoId="M842GL8fGuU" isEmbedded='1'
+
+To login into aws:
+ssh -i ~/Downloads/myssh.pem ubuntu@13.127.39.58
